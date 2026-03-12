@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avni Satyendra Mandpe | Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+    background:linear-gradient(135deg,#eef2ff,#fdf4ff);
+    color:#1e1b4b;
+}
+
+/* NAVBAR */
+/* --- UPDATED NAVBAR CSS --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 10%;
+    background: rgba(255, 255, 255, 0.8); /* Glassmorphism look */
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header h2 {
+    font-size: 26px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #4f46e5, #9333ea);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #3730a3;
+    font-size: 16px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Hover Effect: Niche ek line aayegi */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9333ea;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10% 70px;
+    scroll-margin-top:120px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    font-weight:900;
+    margin-bottom:45px;
+}
+
+.section-title::after{
+    content:'';
+    width:80px;
+    height:4px;
+    background:linear-gradient(90deg,#6366f1,#a855f7);
+    display:block;
+    margin:12px auto 0;
+    border-radius:8px;
+}
+
+/* PROFILE */
+.profile{
+    display:flex;
+    gap:60px;
+    background:rgba(255,255,255,0.85);
+    padding:60px;
+    border-radius:26px;
+    box-shadow:0 30px 60px rgba(99,102,241,0.35);
+    align-items:center;
+}
+
+.profile-img{ width:460px; }
+
+.profile-img img{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 18px 40px rgba(99,102,241,0.4);
+}
+
+.name{ font-size:48px; font-weight:900; }
+
+.role{
+    font-size:26px;
+    font-weight:800;
+    color:#4f46e5;
+    margin:10px 0;
+}
+
+.about-box{
+    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+    padding:22px;
+    border-left:6px solid #6366f1;
+    border-radius:14px;
+    font-size: 20px;
+}
+
+/* EDUCATION */
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+    max-width:950px;
+    margin:auto;
+}
+
+.edu-card{
+    background:linear-gradient(135deg,#ffffff,#f5f3ff);
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 22px 45px rgba(99,102,241,0.3);
+    transition:0.35s;
+}
+
+.edu-card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.edu-card h4{
+    font-size:22px;
+    font-weight:900;
+}
+
+.edu-card span{
+    display:block;
+    font-weight:800;
+    color:#4f46e5;
+    margin:6px 0;
+}
+
+.edu-card p{
+    margin-top:8px;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* SKILLS */
+.skills{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+    max-width:760px;
+    margin:auto;
+}
+
+.skill-card{
+    background:white;
+    padding:28px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 18px 35px rgba(99,102,241,0.25);
+}
+
+.skill-card i{ font-size:38px; }
+
+.skill-card.html i{color:#e34c26}
+.skill-card.css i{color:#38bdf8}
+.skill-card.python i{color:#2563eb}
+.skill-card.excel i{color:#16a34a}
+
+/* C & C++ badges */
+.code-badge{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:16px;
+    color:white;
+    margin:auto;
+}
+.skill-card.c .code-badge{background:#111827}
+.skill-card.cpp .code-badge{background:#374151}
+.skill-card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+
+
+/* PROJECTS */
+.projects{
+    display:flex;
+    gap:32px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.project-card{
+    width:320px;
+    padding:28px;
+    border-radius:24px;
+    background:linear-gradient(135deg,#ffffff,#f5f3ff);
+    box-shadow:0 25px 50px rgba(99,102,241,0.3);
+    cursor:pointer;
+}
+.project-card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+/* CONTACT */
+.contact{
+    background:white;
+    padding:45px;
+    max-width:680px;
+    margin:auto;
+    border-radius:24px;
+    text-align:center;
+    box-shadow:0 25px 50px rgba(99,102,241,0.35);
+}
+
+.contact a{
+    color:#4f46e5;
+    font-weight:700;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Avni Mandpe</h2>
+    <nav>
+        <a href="#profile">Profile</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="profile">
+<div class="profile">
+<div class="profile-img"><img src="avni11.jpeg"></div>
+<div>
+<h1 class="name">Avni Satyendra Mandpe</h1>
+<h3 class="role"> Student | aspiring data analyst</h3>
+<div class="about-box">
+<p>Passionate about data analysis, problem-solving and building real-world technical projects using Python, Excel and programming fundamentals.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="education">
+<h2 class="section-title">Education</h2>
+<div class="education-grid">
+
+<div class="edu-card">
+<h4>10th Standard (SSC)</h4>
+<span>2022 | AP Secondary board</span>
+<p><b>School:</b> Bhartiya Vidya Bhavan's</p>
+<p><b>Percentage:</b> 84%</p>
+</div>
+
+<div class="edu-card">
+<h4>12th Standard (Science)</h4>
+<span>2024 | Maharashtra Board</span>
+<p><b>College:</b> Major Hemant Jakate Public School</p>
+<p><b>Percentage:</b> 68%</p>
+<p><b>Subjects:</b> Physics, Chemistry, Mathematics, Biology</p>
+</div>
+
+<div class="edu-card">
+<h4>B.Tech – Computer Engineering</h4>
+<span>2023 – 2028 | RTMNU</span>
+<p><b>College:</b> Suryodaya College of Engineering & Technology</p>
+<p><b>Current Year:</b> 2nd Year</p>
+<p><b>CGPA:</b> 7.28</p>
+<p><b>Subjects:</b> C, C++, Data Structures, DBMS</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+<div class="skills">
+<div class="skill-card c"><div class="code-badge">C</div><h3>C</h3></div>
+<div class="skill-card cpp"><div class="code-badge">C++</div><h3>C++</h3></div>
+<div class="skill-card html"><i class="fab fa-html5"></i><h3>HTML</h3></div>
+<div class="skill-card css"><i class="fab fa-css3-alt"></i><h3>CSS</h3></div>
+<div class="skill-card excel"><i class="fas fa-file-excel"></i><h3>Excel</h3></div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+<div class="projects">
+<div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Indoor_air_quality')">
+<h3>Indoor Air Quality Monitoring</h3>
+<p>Real-time air quality monitoring using sensors.</p>
+</div>
+<div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Piezoelectricity')">
+<h3>Footstep Energy Generator</h3>
+<p>Electricity generation using piezoelectric sensors.</p>
+</div>
+<div class="project-card" onclick="window.open('https://en.wikipedia.org/wiki/Web_developer')">
+<h3>Portfolio Website</h3>
+<p>Responsive portfolio using HTML & CSS.</p>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="contact">
+<p>📞 7499854855</p>
+<p>📧 avnimandpe565@gmail.com</p>
+<p>
+<i class="fab fa-github"></i>
+<a href="https://github.com/avni-git" target="_blank">
+github.com/yk7897086-png
+</a>
+</p>
+</div>
+</section>
+
+</body>
+</html>
